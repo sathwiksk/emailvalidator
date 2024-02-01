@@ -1,0 +1,300 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('assets/fonts/Roboto-Bold.ttf') format('truetype');
+  
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('assets/fonts/Roboto-Regular.ttf') format('truetype');
+    
+    font-style: normal;
+}
+
+body
+{
+    min-height: 100svh;
+    
+    background-color: hsl(234, 29%, 20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.container
+{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0.25rem;
+}
+
+
+#mobile-img
+{
+max-width: 100%;
+}
+
+#desktop-img
+{display: none;}
+
+
+.content
+{
+    padding:1rem;
+    font-family: 'Roboto Regular', sans-serif;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+h1{
+    font-family: 'Roboto Bold', sans-serif;
+    color:hsl(234, 29%, 20%);
+    /* padding: 0.5rem; */
+}
+.desc
+{
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color:hsl(235, 18%, 26%);
+}
+.checklist
+{
+    padding: 1.5rem;
+    
+}
+.checklist>li
+{
+    list-style: none;
+    
+    list-style-image: url('assets/images/icon-list.svg');
+    
+    padding-left: 0.7rem;
+    font-size: 0.9rem;
+    color:hsl(235, 18%, 26%);
+
+
+
+    
+}
+
+.formm
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 10rem;
+    
+
+     /* display: grid;
+     grid-template-columns: 1fr 1fr;
+     justify-content: space-evenly;
+     min-height: 20rem; */
+}
+.emaillabel,button
+{
+    font-family: 'Roboto Bold', sans-serif;
+    
+    font-size: 0.7rem;
+}
+.emaillabel
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color:hsl(234, 29%, 20%);
+    
+}
+.error
+{
+    color:hsl(4, 100%, 67%);
+    padding-right: 0.1rem;
+    
+
+}
+
+
+input{
+   
+    padding:1rem;
+    padding-left: 1.5rem;
+    border-radius: 0.4rem;
+    text-align: left;
+    
+    border: 1px solid hsl(231, 7%, 60%);
+}
+.errorYes{
+    background-color:hsla(4, 100%, 67%,0.2);
+    color:hsl(4, 100%, 67%);
+}
+
+.subscribe{
+    
+    padding:1rem;
+    border-radius: 0.45rem;
+    font-size: 0.75rem;
+    border: 0;
+    color:white;
+    background-color: hsl(234, 29%, 20%);
+    cursor: pointer;
+
+}
+
+.signup-success
+{
+    
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    /* min-height: 100svh; */
+    gap:2.5ch;
+    padding:1.25rem;
+    font-family: 'Roboto regular', sans-serif;
+    font-size:0.9rem;
+
+
+}
+
+.check{
+    max-width: 3rem;
+    animation: scaleIn 0.5s ease forwards;
+    transform-origin: center;
+    opacity: 0;
+}
+
+@keyframes scaleIn {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+#submittedEmail
+{
+    font-family: 'Roboto bold', sans-serif;
+
+}
+
+.dismiss
+{
+    padding:1rem;
+    background-color: hsl(234, 29%, 20%);
+    color:white;
+    border:0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  
+   
+
+
+    
+    
+    
+    
+}
+.dismiss:hover,.subscribe:hover
+{
+    background-color: hsl(4, 100%, 67%);
+    cursor: pointer;
+
+}
+
+
+.disabled
+{
+    background-color:rgb(125,125,125);
+    
+
+
+    
+}
+.disabled:hover
+{
+    animation: buttonJiggle 0.1s ease 2, horizontalVibration 0.1s ease 2;
+    background-color: rgb(115,115,115);
+    /* background-color: gray; */
+    cursor: auto;
+    /* cursor:no-drop; */
+   
+}
+@keyframes buttonJiggle {
+    0% {
+      transform: rotate(-1deg);
+    }
+    25% {
+      transform: rotate(1deg);
+    }
+    50% {
+      transform: rotate(-1deg);
+    }
+    75% {
+      transform: rotate(1deg);
+    }
+    100% {
+      transform: rotate(-1deg);
+    }
+  }
+  
+  @keyframes horizontalVibration {
+    0% {
+      transform: translateX(-1.5px);
+    }
+    50% {
+      transform: translateX(1.5px);
+    }
+    100% {
+      transform: translateX(-1.5px);
+    }
+  }
+  
+  @media screen and (min-width:40rem)
+  {
+    #mobile-img
+    {
+        display: none;
+    }
+    #desktop-img
+    {
+        display:block;
+        max-height: 25rem;
+        
+        
+    }
+    
+    .container
+    {
+        padding:1.2rem;
+        border-radius: 1.5rem;  
+        /* background-color: white; */
+        
+    }
+    .signup-form
+    {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .signup-success{
+        max-width: 25rem;
+    }
+  }
+
+
+.hidden
+{display: none;
+    
+}
